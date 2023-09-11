@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poppins:wght@200&display=swap');
+
+html, body{
+  height: 100%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    }
+
+    #title{
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 10%;
+        font-size: 50px;
+        color: darkgreen;
+        font-weight: bolder;
+    }
+    
+    #start-button{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    #start-button:hover{
+        background-color: maroon;
+        color: white;
+    }
+
+    #canvas{
+        border: 2px solid red;
+        margin-left: 400px;
+        position: absolute;
+        top: 50px;
+      }
+
+      .arrow-button {
+        width: 60px;
+        height: 60px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+    }
+
+    .up {
+        top: 10px;
+    }
+
+    .down {
+        bottom: 10px;
+    }
+
+    .left {
+        left: 10px;
+    }
+
+    .right {
+        right: 10px;
+    }
+
+    .go-back{
+      position: absolute;
+      background-color: red;
+      bottom: 0;
+      right: 0;
+      cursor: pointer;
+      position: fixed;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+
+
+      @media (max-width: 450px) {
+        #opening-section{
+        display: flex;
+      flex-direction: column;
+           padding-bottom: 100%;
+        }
+          #start-button{
+            margin-top: 50px;
+          }
+      } 
+
+    
+      @media (max-width: 1111px) {
+        }
+        #canvas  {
+          position: absolute;
+          width: 80%;
+          height: 50%;
+          margin-left: 50%;
+          transform: translate(-50%);
+          top:20vh;
+          margin-top: -40px;
+        }
+        .arrow-controls {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0%;
+            margin-top: -15px;
+            left: 50%;
+            transform: translate(-50%);  
+        }
+
+        @media(min-width:1111px){
+            .arrow-controls{
+              display: none;
+            }
+            #canvas{
+                height: 70%;
+            }
+          }
+
+      #start-button{
+        margin-top: 20px;
+      }
+
+      #opening-section{
+        position: absolute;
+        background-image: url('/images/football.jpg'); 
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+      }
+      
+      @media (max-width: 400px){
+        #canvas  {
+          margin-top: -30px;
+        }
+      }
