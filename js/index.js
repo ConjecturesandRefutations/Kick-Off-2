@@ -15,6 +15,16 @@ myCanvas.style.display = 'none';
 const arrowControls = document.querySelector('.arrow-controls');
 arrowControls.style.display = 'none';
 
+//Game-over Area
+const fullTime = document.querySelector('.full-time')
+fullTime.style.display = 'none'
+
+//Scores
+const yourScore = document.getElementById('your-score')
+const opponentScore = document.getElementById('opponent-score')
+yourScore.style.display = 'none'
+opponentScore.style.display = 'none'
+
 //Start Button
 window.onload = () => {
 
@@ -22,6 +32,9 @@ window.onload = () => {
         openingSection.style.display = 'none';
         myCanvas.style.display = '';
         arrowControls.style.display = '';
+        yourScore.style.display = '' 
+        opponentScore.style.display = ''
+        timer.style.display = '';
   };
 
 };

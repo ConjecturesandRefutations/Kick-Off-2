@@ -20,6 +20,10 @@ body{
     }
     
     #start-button{
+        font-family: 'poppins';
+        background-color: maroon;
+        color: white;
+        font-weight: bolder;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -29,16 +33,17 @@ body{
     }
 
     #start-button:hover{
-        background-color: maroon;
-        color: white;
+      background-color: transparent;
+      color: green;
     }
 
-    #canvas{
-        border: 2px solid red;
-        margin-left: 400px;
-        position: absolute;
-        top: 50px;
-      }
+    #canvas {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transform-origin: top left;
+  }
 
       .arrow-button {
         width: 60px;
@@ -94,18 +99,6 @@ body{
           }
       } 
 
-    
-      @media (max-width: 1111px) {
-        }
-        #canvas  {
-          position: absolute;
-          width: 80%;
-          height: 50%;
-          margin-left: 50%;
-          transform: translate(-50%);
-          top:20vh;
-          margin-top: -40px;
-        }
         .arrow-controls {
             width: 180px;
             height: 180px;
@@ -125,9 +118,6 @@ body{
             .arrow-controls{
               display: none;
             }
-            #canvas{
-                height: 70%;
-            }
           }
 
       #start-button{
@@ -141,9 +131,38 @@ body{
         height: 100%;
         background-size: cover;
       }
-      
-      @media (max-width: 400px){
-        #canvas  {
-          margin-top: -30px;
-        }
+
+      #yourScore{
+        margin-bottom: 70px;
+        margin-left: 10px
       }
+      
+      .scoreOne, .scoreTwo {
+        font-size: 40px;
+        font-weight: bold;
+        color: red;
+      }
+      
+      #score{
+        margin-left: 100px;
+      }
+      
+      #countdown{
+        font-size: 50px;
+      }
+      
+      #info{
+        float: left;
+      }
+
+      @media (max-width: 610px){
+        #canvas {
+          width: 100vh; 
+          height: 100vw; 
+          top: 50%; 
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+          transform-origin: center center;
+      }
+    }
+      

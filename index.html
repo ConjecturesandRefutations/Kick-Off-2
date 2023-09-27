@@ -27,8 +27,24 @@
     </section>
     
 
-  <canvas id="canvas" width="700" height="500"></canvas> 
+    <canvas id="canvas" width="1400" height="700"></canvas> 
+
+    <section id="info">
+      <div id="your-score">Your Score: <span class="scoreOne">0</span></div>
+      <div id="opponent-score">Opponent's Score: <span class="scoreTwo">0</span></div>
+      <p id="timer">Time: <span id="countdown">45</span></p>
+  </section>
+
+  <section class="full-time">
+    <p>Full Time!</p>
+    <p id="score">Final Score: You: <span class="scoreOneM">0</span> Opponent: <span class="scoreTwoM">0</span></p>
+    <button class="try-again-button">Restart</button>
+    <button class="main-menu-button">Main Menu</button>  
+    <canvas id="canvas2" width="500" height="700"></canvas> 
+</section>
 
   <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/ball.js"></script>
+  <script type="text/javascript" src="./js/countdown.js"></script>
 
   </body>
