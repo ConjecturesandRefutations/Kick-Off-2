@@ -1,3 +1,7 @@
+//Key Variables
+let background = new Image();
+background.src = "./images/football pitch.jpg";
+
 //Opening Area and Start Button
 const startButton = document.getElementById('start-button');
 const openingSection = document.getElementById('opening-section');
@@ -35,6 +39,26 @@ window.onload = () => {
         yourScore.style.display = '' 
         opponentScore.style.display = ''
         timer.style.display = '';
+        startGame();
   };
-
 };
+
+function startGame() {
+  setInterval(updateCountdown, 1000)
+
+  currentGame = new Game();
+  ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // draw background image
+
+  //Instantiate a new ball
+  currentBall = new Ball();
+  currentBall.drawBall();
+  updateCanvas();// keeping track of the updates as the game unfolds
+
+}
+
+function updateCanvas() {
+  ctx.clearRect(0, 0, 700, 500); // clear canvas
+  ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // redraw the background
+
+ currentBall.drawBall(); // redraw the ball at its current position
+}
