@@ -1,6 +1,8 @@
 //Key Variables
+let currentGame;
+let currentBall;
 let background = new Image();
-background.src = "./images/football pitch.jpg";
+background.src = "./images/pitch.jpg";
 
 //Opening Area and Start Button
 const startButton = document.getElementById('start-button');
@@ -41,6 +43,10 @@ window.onload = () => {
         timer.style.display = '';
         startGame();
   };
+  document.onkeydown = (e) => {
+    let whereToGo = e.keyCode;
+    currentBall.moveBall(whereToGo);
+}
 };
 
 function startGame() {
