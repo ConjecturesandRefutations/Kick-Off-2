@@ -43,6 +43,7 @@ body{
       left: 50%;
       transform: translateX(-50%);
       transform-origin: top left;
+      z-index: 0;
   }
 
       .arrow-button {
@@ -153,6 +154,10 @@ body{
       
       #info{
         float: left;
+        position: absolute;
+        z-index: 999;
+        font-size: 30px;
+        font-weight: bolder;
       }
 
       @media (max-width: 610px){
@@ -164,5 +169,9 @@ body{
           transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
           transform-origin: center center;
       }
+        .arrow-controls{
+          transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+          transform-origin: center center;
+        }
     }
       

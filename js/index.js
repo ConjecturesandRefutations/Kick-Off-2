@@ -1,4 +1,5 @@
 //Key Variables
+let animationID;
 let currentGame;
 let currentBall;
 let background = new Image();
@@ -43,10 +44,12 @@ window.onload = () => {
         timer.style.display = '';
         startGame();
   };
+
   document.onkeydown = (e) => {
     let whereToGo = e.keyCode;
     currentBall.moveBall(whereToGo);
 }
+
 };
 
 function startGame() {
@@ -58,7 +61,12 @@ function startGame() {
   //Instantiate a new ball
   currentBall = new Ball();
   currentBall.drawBall();
-  updateCanvas();// keeping track of the updates as the game unfolds
+
+  // Clear any previous animation loop
+  cancelAnimationFrame(animationID);
+
+  // Start the animation loop
+  animationID = requestAnimationFrame(updateCanvas);
 
 }
 
@@ -67,4 +75,7 @@ function updateCanvas() {
   ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // redraw the background
 
  currentBall.drawBall(); // redraw the ball at its current position
+
+ animationID = requestAnimationFrame(updateCanvas);
+
 }
