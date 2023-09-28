@@ -77,7 +77,7 @@ function updateCanvas() {
 
  animationID = requestAnimationFrame(updateCanvas);
 
- if (currentBall.x > 1310 && currentBall.y>290 && currentBall.y<380 ){
+ if (currentBall.x > 1310 && currentBall.y>275 && currentBall.y<380 ){
    goalSound.play();
    currentBall.x = this.x = 100;
    currentBall.y = myCanvas.height/2;
