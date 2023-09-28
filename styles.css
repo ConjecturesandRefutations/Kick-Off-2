@@ -214,5 +214,8 @@ body{
           transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90 degrees */
           transform-origin: center center;
         }
+        #title{
+          top: 0;
+        }
     }
       
