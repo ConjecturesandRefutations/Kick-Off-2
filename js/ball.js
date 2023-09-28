@@ -1,6 +1,6 @@
 class Ball {
   constructor(){
-    this.x = 20;
+    this.x = 100;
     this.y = myCanvas.height/2;
     this.width = 40;
     this.height = 40;
