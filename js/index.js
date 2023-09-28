@@ -49,7 +49,6 @@ window.onload = () => {
     let whereToGo = e.keyCode;
     currentBall.moveBall(whereToGo);
 }
-
 };
 
 function startGame() {
@@ -79,10 +78,24 @@ function updateCanvas() {
  animationID = requestAnimationFrame(updateCanvas);
 
  if (currentBall.x > 1310 && currentBall.y>290 && currentBall.y<380 ){
+   goalSound.play();
    currentBall.x = this.x = myCanvas.width/4;
    currentBall.y = myCanvas.height/2;
    currentGame.score++
    document.querySelector('.scoreOne').innerText = currentGame.score
+}
+
+if (startingSeconds === 0){
+  endGame()
+}
+
+function endGame(){
+  currentBall.x = this.x = myCanvas.width/4;
+  currentBall.y = myCanvas.height/2;
+  myCanvas.style.display = 'none'
+  timer.style.display = 'none'
+  fullTime.style.display = ''
+  isClockPaused = true
 }
 }
 
@@ -92,3 +105,27 @@ function detectCollision(obstacle) {
   (currentBall.y < obstacle.y + obstacle.height) &&         // check top side
   (currentBall.y + currentBall.height > obstacle.y));           // check bottom side
 }
+
+    //To reset the score
+    function resetScore(){
+      document.querySelector('.scoreOne').innerText = 0
+      document.querySelector('.scoreTwo').innerText = 0
+      currentGame.score = 0
+      currentGame.opponentsScore = 0
+    }
+
+//Restart Button
+let restartButton = document.getElementsByClassName('try-again-button')
+for (let i = 0 ; i < restartButton.length; i++) {
+restartButton[i].addEventListener('click',  ()=>{
+startingSeconds = 45
+isClockPaused= false;
+fullTime.style.display = 'none';
+openingSection.style.display = 'none'
+myCanvas.style.display = ''
+yourScore.style.display = '' 
+opponentScore.style.display = ''
+timer.style.display = ''
+resetScore()
+}) 
+} 

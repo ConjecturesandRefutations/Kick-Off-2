@@ -18,6 +18,26 @@ body{
         color: darkgreen;
         font-weight: bolder;
     }
+
+    .utility-buttons{
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      gap: 20px;
+    }
+
+    .try-again-button,.main-menu-button{
+        font-family: 'poppins';
+        background-color: maroon;
+        color: white;
+        font-weight: bolder;
+        padding: 10px;
+        cursor: pointer;
+        height: 70px;
+    }
     
     #start-button{
         font-family: 'poppins';
@@ -32,9 +52,16 @@ body{
         cursor: pointer;
     }
 
-    #start-button:hover{
+    #start-button:hover,.try-again-button:hover,.main-menu-button:hover{
       background-color: transparent;
       color: green;
+    }
+
+    #end-title{
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      font-size: 100px;
     }
 
     #canvas {
@@ -158,6 +185,19 @@ body{
         z-index: 999;
         font-size: 30px;
         font-weight: bolder;
+      }
+
+      .full-time {
+        background-image: url("../images/referee.gif");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: cover;
+        font-size: 40px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        color: purple;
       }
 
       @media (max-width: 610px){
