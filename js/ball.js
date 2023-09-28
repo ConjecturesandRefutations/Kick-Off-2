@@ -1,6 +1,6 @@
 class Ball {
   constructor(){
-    this.x = myCanvas.width/4;
+    this.x = myCanvas.width/5;
     this.y = myCanvas.height/2;
     this.width = 40;
     this.height = 40;
@@ -46,19 +46,23 @@ const leftButton = document.getElementById('left-button');
 const rightButton = document.getElementById('right-button');
 
 // Touch event listeners
-upButton.addEventListener('touchstart', () => {
+upButton.addEventListener('touchstart', (event) => {
+  event.preventDefault();
   currentBall.moveBall(38); // 38 is the keycode for "up"
 });
 
-downButton.addEventListener('touchstart', () => {
+downButton.addEventListener('touchstart', (event) => {
+  event.preventDefault();
   currentBall.moveBall(40); // 40 is the keycode for "down"
 });
 
-leftButton.addEventListener('touchstart', () => {
+leftButton.addEventListener('touchstart', (event) => {
+  event.preventDefault();
   currentBall.moveBall(37); // 37 is the keycode for "left"
 });
 
-rightButton.addEventListener('touchstart', () => {
+rightButton.addEventListener('touchstart', (event) => {
+  event.preventDefault();
   currentBall.moveBall(39); // 39 is the keycode for "right"
 });
 

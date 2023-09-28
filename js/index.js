@@ -79,7 +79,7 @@ function updateCanvas() {
 
  if (currentBall.x > 1310 && currentBall.y>290 && currentBall.y<380 ){
    goalSound.play();
-   currentBall.x = this.x = myCanvas.width/4;
+   currentBall.x = this.x = myCanvas.width/5;
    currentBall.y = myCanvas.height/2;
    currentGame.score++
    document.querySelector('.scoreOne').innerText = currentGame.score
@@ -90,12 +90,13 @@ if (startingSeconds === 0){
 }
 
 function endGame(){
-  currentBall.x = this.x = myCanvas.width/4;
+  currentBall.x = this.x = myCanvas.width/5;
   currentBall.y = myCanvas.height/2;
-  myCanvas.style.display = 'none'
-  timer.style.display = 'none'
-  fullTime.style.display = ''
-  isClockPaused = true
+  myCanvas.style.display = 'none';
+  timer.style.display = 'none';
+  fullTime.style.display = '';
+  isClockPaused = true;
+  arrowControls.style.display = 'none';
 }
 }
 
@@ -126,6 +127,7 @@ myCanvas.style.display = ''
 yourScore.style.display = '' 
 opponentScore.style.display = ''
 timer.style.display = ''
+arrowControls.style.display = '';
 resetScore()
 }) 
 } 
