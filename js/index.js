@@ -78,4 +78,17 @@ function updateCanvas() {
 
  animationID = requestAnimationFrame(updateCanvas);
 
+ if (currentBall.x > 1310 && currentBall.y>290 && currentBall.y<380 ){
+   currentBall.x = this.x = myCanvas.width/4;
+   currentBall.y = myCanvas.height/2;
+   currentGame.score++
+   document.querySelector('.scoreOne').innerText = currentGame.score
+}
+}
+
+function detectCollision(obstacle) {
+  return ((currentBall.x < obstacle.x + obstacle.width) &&         // check left side of element 
+  (currentBall.x + obstacle.width > obstacle.x) &&           // check right side
+  (currentBall.y < obstacle.y + obstacle.height) &&         // check top side
+  (currentBall.y + currentBall.height > obstacle.y));           // check bottom side
 }

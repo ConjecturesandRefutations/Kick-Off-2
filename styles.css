@@ -166,11 +166,11 @@ body{
           height: 100vw; 
           top: 50%; 
           left: 50%;
-          transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+          transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90 degrees */
           transform-origin: center center;
       }
         .arrow-controls{
-          transform: translate(-50%, -50%) rotate(90deg); /* Rotate 90 degrees */
+          transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90 degrees */
           transform-origin: center center;
         }
     }

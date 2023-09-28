@@ -1,7 +1,7 @@
 class Ball {
   constructor(){
-    this.x = 231;
-    this.y = 520;
+    this.x = myCanvas.width/4;
+    this.y = myCanvas.height/2;
     this.width = 40;
     this.height = 40;
     this.img = './images/football.jpg';
