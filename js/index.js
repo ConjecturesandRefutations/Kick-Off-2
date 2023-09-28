@@ -1,5 +1,4 @@
 //Key Variables
-let animationID;
 let currentGame;
 let currentBall;
 let background = new Image();
@@ -33,8 +32,8 @@ yourScore.style.display = 'none'
 opponentScore.style.display = 'none'
 
 //Start Button
+let animationID; // Store the animation ID
 window.onload = () => {
-
     startButton.onclick = () => {
         openingSection.style.display = 'none';
         myCanvas.style.display = '';
@@ -45,10 +44,6 @@ window.onload = () => {
         startGame();
   };
 
-  document.onkeydown = (e) => {
-    let whereToGo = e.keyCode;
-    currentBall.moveBall(whereToGo);
-}
 };
 
 function startGame() {
@@ -60,6 +55,8 @@ function startGame() {
   //Instantiate a new ball
   currentBall = new Ball();
   currentBall.drawBall();
+
+  addTouchListeners();
 
   // Clear any previous animation loop
   cancelAnimationFrame(animationID);
@@ -74,8 +71,6 @@ function updateCanvas() {
   ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // redraw the background
 
  currentBall.drawBall(); // redraw the ball at its current position
-
- animationID = requestAnimationFrame(updateCanvas);
 
  if (currentBall.x > 1310 && currentBall.y>275 && currentBall.y<380 ){
    goalSound.play();
@@ -98,6 +93,8 @@ function endGame(){
   isClockPaused = true;
   arrowControls.style.display = 'none';
 }
+
+animationID = requestAnimationFrame(updateCanvas);
 }
 
 function detectCollision(obstacle) {
