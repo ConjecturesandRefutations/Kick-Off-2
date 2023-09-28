@@ -79,7 +79,7 @@ function updateCanvas() {
 
  if (currentBall.x > 1310 && currentBall.y>290 && currentBall.y<380 ){
    goalSound.play();
-   currentBall.x = this.x = 500;
+   currentBall.x = this.x = 100;
    currentBall.y = myCanvas.height/2;
    currentGame.score++
    document.querySelector('.scoreOne').innerText = currentGame.score
@@ -90,7 +90,7 @@ if (startingSeconds === 0){
 }
 
 function endGame(){
-  currentBall.x = this.x = 500;
+  currentBall.x = this.x = 100;
   currentBall.y = myCanvas.height/2;
   myCanvas.style.display = 'none';
   timer.style.display = 'none';
