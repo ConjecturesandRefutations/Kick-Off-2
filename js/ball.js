@@ -69,24 +69,24 @@
     }
   
     handleKeyDown(event) {
-      if (event.keyCode === 38) {
+      if (event.keyCode === 38 && !this.upButtonDown) {
         // up arrow key
         this.upButtonDown = true;
         this.throttledUpStart();
-      } else if (event.keyCode === 40) {
+      } else if (event.keyCode === 40 && !this.downButtonDown) {
         // down arrow key
         this.downButtonDown = true;
         this.throttledDownStart();
-      } else if (event.keyCode === 37) {
+      } else if (event.keyCode === 37 && !this.leftButtonDown) {
         // left arrow key
         this.leftButtonDown = true;
         this.throttledLeftStart();
-      } else if (event.keyCode === 39) {
+      } else if (event.keyCode === 39 && !this.rightButtonDown) {
         // right arrow key
         this.rightButtonDown = true;
         this.throttledRightStart();
       }
-    }
+    }    
   
     handleKeyUp(event) {
       if (event.keyCode === 38) {
@@ -120,27 +120,26 @@
     }
   
     startMovingBall(direction) {
-      console.log('startMovingBall called with direction: ' + direction);
-      // Move the ball continuously as long as the corresponding button is pressed
-      if (direction === 'up' && this.upButtonDown && this.y > 5) {
-        this.y -= 3; 
-        console.log('up')
-      } else if (direction === 'down' && this.downButtonDown && this.y < myCanvas.height - this.height - 5) {
-        this.y += 3; 
-        console.log('down')
-      } else if (direction === 'left' && this.leftButtonDown && this.x > 5) {
-        this.x -= 3; 
-        console.log('left')
-      } else if (direction === 'right' && this.rightButtonDown && this.x < myCanvas.width - this.width - 5) {
-        this.x += 3; 
-        console.log('right')
-      }
       
       // Use requestAnimationFrame to keep moving the ball continuously
-      if (this.upButtonDown || this.downButtonDown || this.leftButtonDown || this.rightButtonDown) {
-        this.requestAnimationFrame = requestAnimationFrame(() => this.startMovingBall(direction));
-      }
+      const moveBall = () => {
+        if (this.upButtonDown || this.downButtonDown || this.leftButtonDown || this.rightButtonDown) {
+          if (direction === 'up' && this.upButtonDown && this.y > 5) {
+            this.y -= 7;
+          } else if (direction === 'down' && this.downButtonDown && this.y < myCanvas.height - this.height - 5) {
+            this.y += 7;
+          } else if (direction === 'left' && this.leftButtonDown && this.x > 5) {
+            this.x -= 7;
+          } else if (direction === 'right' && this.rightButtonDown && this.x < myCanvas.width - this.width - 50) {
+            this.x += 7;
+          }
+          requestAnimationFrame(moveBall);
+        }
+      };
+      
+      moveBall();
     }
+    
   
     stopMovingBall() {
       console.log('stopMovingBall called');

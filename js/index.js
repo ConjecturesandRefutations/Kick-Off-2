@@ -31,6 +31,14 @@ const opponentScore = document.getElementById('opponent-score')
 yourScore.style.display = 'none'
 opponentScore.style.display = 'none'
 
+//Main Menu Button
+let mainMenuButton = document.getElementsByClassName('main-menu-button')
+for (let i = 0 ; i < mainMenuButton.length; i++) {
+  mainMenuButton[i].addEventListener('click',  ()=>{
+    location.reload() 
+  })  
+}
+
 //Start Button
 let animationID; // Store the animation ID
 window.onload = () => {
@@ -78,7 +86,7 @@ function updateCanvas() {
    currentBall.y = myCanvas.height/2;
    currentGame.score++
    document.querySelector('.scoreOne').innerText = currentGame.score
-}
+  }
 
 if (startingSeconds === 0){
   endGame()
