@@ -143,6 +143,8 @@ body{
         height: 100%;
         background-size: cover;
         background-position: center;
+        margin: 0;
+        padding: 0;
       }
 
       .audio{
@@ -403,14 +405,6 @@ body{
     #volume-icon,#setting-icon{
       font-size: 45px;
     }
-    #opening-section{
-      display: flex;
-    flex-direction: column;
-         padding-bottom: 100%;
-      }
-        #start-button{
-          margin-top: 50px;
-        }
         .ballImages{
           flex-wrap: wrap;
       }
