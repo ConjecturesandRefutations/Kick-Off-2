@@ -2,7 +2,7 @@
 
 html, body{
   height: 100%;
-  background-color: green;
+  background-color: lightgreen;
 }
 
 body{
@@ -39,22 +39,17 @@ body{
     }
     
     #start-button{
-        font-family: 'poppins';
-        background-color: maroon;
-        color: white;
-        font-weight: bolder;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        padding: 10px;
-        cursor: pointer;
-    }
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%);
+      cursor: pointer;
+      max-width: 350px;
+  }
 
-    #start-button:hover,.try-again-button:hover,.main-menu-button:hover{
-      background-color: transparent;
-      color: green;
-    }
+  #start-button:hover{
+    background-color: black;
+}
 
     #end-title{
       position: absolute;
@@ -105,7 +100,7 @@ body{
 
     .go-back{
       position: absolute;
-      background-color: red;
+      background-color: green;
       bottom: 0;
       right: 0;
       cursor: pointer;
@@ -174,7 +169,7 @@ body{
       flex-direction: row;
       top: 21px;
       right: 10px;
-      color: red;
+      color: darkgreen;
   }
 
   #instructions{
@@ -186,6 +181,22 @@ body{
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+}
+
+.settings{
+  cursor: pointer;
+  position: absolute;
+  padding: none;
+  display: flex;
+  flex-direction: row;
+  color: darkgreen;
+  top: 21px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#settings{
+    height: 15px;
 }
 
 #back{
@@ -220,7 +231,7 @@ body{
       padding: none;
       display: flex;
       flex-direction: row;
-      color: red;
+      color: darkgreen;
     }
 
     #volume-icon{margin-top: 20px;}
@@ -281,29 +292,25 @@ body{
         .back{
           margin-top: 15px;
         }
-    }
-
-    @media(max-width:506px){
-      .audio,#instructions  {
-        display: none;
-    }
-    #volume-icon{
-      font-size: 50px;
-      margin-left: 10px;
-    }
-    #instruction-icon{
-      font-size: 50px;
-    }
+        .audio,#instructions,#settings  {
+          display: none;
+      }
+      #volume-icon,#setting-icon,#instruction-icon{
+        font-size: 50px;
+      }
     }
       
     @media(max-width:500px){
       #title,#instruction-title{
           max-width: 350px;
       }
+      #start-button{
+        max-width: 250px;
+    }
   }
 
   @media(max-width:450px){
-    #volume-icon{
+    #volume-icon,#setting-icon{
       font-size: 45px;
     }
   }
@@ -312,12 +319,18 @@ body{
     #title,#instruction-title{
         max-width: 300px;
     }
+    #start-button{
+      max-width: 250px;
+  }
 }
 
 @media(max-width:330px){
   #volume-icon{
     font-size: 40px;
     margin-top: 10px;
+  }
+  #setting-icon{
+    font-size: 40px;
   }
 #title,#instruction-title{
   max-width: 250px;
@@ -328,10 +341,16 @@ body{
 #instruction-icon{
   font-size: 40px;
 }
+#start-button{
+  max-width: 200px;
+}
 }
 
 @media(max-width:280px){
   #title,#instruction-title{
       max-width: 230px;
   }
+  #start-button{
+    max-width: 200px;
+}
 }
