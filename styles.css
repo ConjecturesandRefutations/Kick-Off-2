@@ -86,18 +86,22 @@ body{
 
     .up {
         top: 10px;
+        font-size: 40px;
     }
 
     .down {
         bottom: 10px;
+        font-size: 40px;
     }
 
     .left {
         left: 10px;
+        font-size: 40px;
     }
 
     .right {
         right: 10px;
+        font-size: 40px;
     }
 
     .go-back{
