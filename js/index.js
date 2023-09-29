@@ -97,39 +97,53 @@ if (startingSeconds === 0){
 
 const leftMargin = 250; 
 
-if (obstaclesFrequency % 60 === 1) {
+for (let i = 0; i < currentGame.obstacles.length; i++) {
+  const obstacle = currentGame.obstacles[i];
+
+  // Update obstacle position based on direction
+  if (obstacle.direction === 'down') {
+    obstacle.y += 5;
+  } else if (obstacle.direction === 'up') {
+    obstacle.y -= 5;
+  }
+
+  obstacle.drawObstacle();
+
+  // Logic for getting tackled by obstacles
+  if (detectCollision(obstacle)) {
+    currentGame.opponentsScore++;
+    document.querySelector('.scoreTwo').innerText = currentGame.opponentsScore;
+    currentBall.x = 100;
+    currentBall.y = myCanvas.height / 2;
+    tackleSound.play();
+  }
+
+  // Logic for removing obstacles when they leave the canvas
+  if (
+    (obstacle.direction === 'down' && obstacle.y >= myCanvas.height) ||
+    (obstacle.direction === 'up' && obstacle.y + obstacle.height <= 0)
+  ) {
+    currentGame.obstacles.splice(i, 1); // remove that obstacle from the array
+  }
+}
+
+// Create new obstacles with random directions
+if (obstaclesFrequency % 20 === 1) {
   let randomObstacleWidth = 50;
   let maxX = myCanvas.width - randomObstacleWidth;
   let randomObstacleX = Math.floor(Math.random() * (maxX - leftMargin)) + leftMargin;
-  let randomObstacleY = -70;
+  let randomObstacleY = Math.random() < 0.5 ? -70 : myCanvas.height; // Randomly select direction
   let randomObstacleHeight = 70;
+  let direction = randomObstacleY === -70 ? 'down' : 'up';
   let newObstacle = new Obstacle(
     randomObstacleX,
     randomObstacleY,
     randomObstacleWidth,
-    randomObstacleHeight
+    randomObstacleHeight,
+    direction
   );
 
   currentGame.obstacles.push(newObstacle);
-}
-
-for(let i = 0; i<currentGame.obstacles.length; i++) {
-  currentGame.obstacles[i].y += 3; 
-  currentGame.obstacles[i].drawObstacle();
-
-  //Logic for getting tackled by obstacles
-
-  if (detectCollision(currentGame.obstacles[i])) {
-    currentGame.opponentsScore++ 
-    document.querySelector('.scoreTwo').innerText = currentGame.opponentsScore
-    currentBall.x = 100;
-    currentBall.y = myCanvas.height/2;
-    tackleSound.play()
-  }
-  // Logic for removing obstacles
-  if (currentGame.obstacles.length > 0 && currentGame.obstacles[i].y >= myCanvas.height) {
-    currentGame.obstacles.splice(i, 1); // remove that obstacle from the array
-  } 
 }
 
 function endGame(){

@@ -1,10 +1,11 @@
 class Obstacle {
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, direction) {
         this.x = x;
         this.y = y;
         this.width = 50;
         this.height = 70;
-        this.img = './images/zidane.png'
+        this.img = './images/zidane.png';
+        this.direction = direction;
     }
 
     drawObstacle(){
