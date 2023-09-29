@@ -1,6 +1,7 @@
 //Key Variables
 let currentGame;
 let currentBall;
+let animationID; // Store the animation ID
 let obstaclesFrequency = 0; //Logic for supporting the generation of obstacles
 
 let background = new Image();
@@ -15,9 +16,24 @@ openingSection.style.display = '';
 //Canvas
 const myCanvas = document.getElementById('canvas');
 const ctx = myCanvas.getContext('2d');
-
 myCanvas.style.display = 'none';
 
+//Instructions Section
+const instructionSection = document.querySelector('.instruction-section');
+instructionSection.style.display = 'none';
+//Instruction Button
+const instructionButton = document.querySelector('.instruction');
+  instructionButton.onclick = () => {
+    openingSection.style.display = 'none';
+    instructionSection.style.display = '';
+}
+
+// Back Button
+const backButton = document.querySelector('.back');
+  backButton.onclick = () => {
+  openingSection.style.display = '';
+  instructionSection.style.display = 'none';
+}
 
 //Arrow Controls
 const arrowControls = document.querySelector('.arrow-controls');
@@ -42,10 +58,10 @@ for (let i = 0 ; i < mainMenuButton.length; i++) {
 }
 
 //Start Button
-let animationID; // Store the animation ID
 window.onload = () => {
     startButton.onclick = () => {
         opening.pause();
+        opening.currentTime = 0;
         openingSection.style.display = 'none';
         myCanvas.style.display = '';
         arrowControls.style.display = '';

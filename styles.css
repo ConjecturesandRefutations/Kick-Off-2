@@ -2,6 +2,7 @@
 
 html, body{
   height: 100%;
+  background-color: green;
 }
 
 body{
@@ -165,6 +166,54 @@ body{
         margin-left: 10px;
     }
 
+    .instruction{
+      cursor: pointer;
+      position: absolute;
+      padding: none;
+      display: flex;
+      flex-direction: row;
+      top: 21px;
+      right: 10px;
+      color: red;
+  }
+
+  #instructions{
+    height: 15px;
+}
+
+  .instruction-text{
+    top: 25%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#back{
+  max-width: 100px;
+  margin-top: 5px;
+}
+
+.back{
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 5px;
+  color: white;
+  background-color: transparent;
+  padding: none;
+  font-size: large;
+  margin-top: 21px;
+}
+
+#instruction-title{
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%);
+  width: 500px;
+}
+
     .play-music{
       cursor: pointer;
       position: absolute;
@@ -229,20 +278,26 @@ body{
           transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90 degrees */
           transform-origin: center center;
         }
+        .back{
+          margin-top: 15px;
+        }
     }
 
     @media(max-width:506px){
-      .audio  {
+      .audio,#instructions  {
         display: none;
     }
     #volume-icon{
       font-size: 50px;
       margin-left: 10px;
     }
+    #instruction-icon{
+      font-size: 50px;
+    }
     }
       
     @media(max-width:500px){
-      #title{
+      #title,#instruction-title{
           max-width: 350px;
       }
   }
@@ -254,7 +309,7 @@ body{
   }
 
   @media(max-width:400px){
-    #title{
+    #title,#instruction-title{
         max-width: 300px;
     }
 }
@@ -264,13 +319,19 @@ body{
     font-size: 40px;
     margin-top: 10px;
   }
-#title{
+#title,#instruction-title{
   max-width: 250px;
+}
+.instruction{
+  top: 10px;
+}
+#instruction-icon{
+  font-size: 40px;
 }
 }
 
 @media(max-width:280px){
-  #title{
+  #title,#instruction-title{
       max-width: 230px;
   }
 }
