@@ -5,7 +5,7 @@ let animationID; // Store the animation ID
 let obstaclesFrequency = 0; //Logic for supporting the generation of obstacles
 
 let background = new Image();
-background.src = "./images/pitch.png";
+background.src = "./images/pitch.jpg";
 
 //Opening Area and Start Button
 const startButton = document.getElementById('start-button');
