@@ -10,14 +10,12 @@ body{
     }
 
     #title{
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%);
-        top: 10%;
-        font-size: 100px;
-        color: darkgreen;
-        font-weight: bolder;
-    }
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%);
+      width: 500px;
+  }
 
     .utility-buttons{
       display: flex;
@@ -214,8 +212,28 @@ body{
           transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90 degrees */
           transform-origin: center center;
         }
-        #title{
-          top: 0;
-        }
     }
       
+    @media(max-width:500px){
+      #title{
+          max-width: 350px;
+      }
+  }
+
+  @media(max-width:400px){
+    #title{
+        max-width: 300px;
+    }
+}
+
+@media(max-width:330px){
+#title{
+  max-width: 250px;
+}
+}
+
+@media(max-width:280px){
+  #title{
+      max-width: 230px;
+  }
+}
