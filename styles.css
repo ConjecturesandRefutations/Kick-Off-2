@@ -28,16 +28,19 @@ body{
       gap: 20px;
     }
 
-    .try-again-button,.main-menu-button{
-        font-family: 'poppins';
-        background-color: maroon;
-        color: white;
-        font-weight: bolder;
-        padding: 10px;
-        cursor: pointer;
-        height: 70px;
-    }
     
+    #restart{
+      position: absolute;
+      left: 50%;
+      top: 70%;
+      transform: translate(-50%);
+      cursor: pointer;
+      max-width: 250px;
+      border: 2px solid;
+      border-color: grey black black grey;
+    }
+
+
     #start-button{
       position: absolute;
       left: 50%;
@@ -200,7 +203,6 @@ body{
   cursor: pointer;
   text-decoration: none;
   margin-bottom: 5px;
-  color: white;
   background-color: transparent;
   padding: none;
   font-size: large;
