@@ -403,10 +403,13 @@ body{
     .homepage{
       right: 20px;
   }
+  #volume-icon{
+    font-size: 45px;
+  }
   }
 
   @media(max-width:450px){
-    #volume-icon,#setting-icon{
+    #volume-icon,#setting-icon,#instruction-icon{
       font-size: 45px;
     }
         .ballImages{
@@ -426,16 +429,12 @@ body{
 @media(max-width:330px){
   #volume-icon{
     font-size: 40px;
-    margin-top: 10px;
   }
   #setting-icon{
     font-size: 40px;
   }
 #title,#instruction-title,#settings-title{
   max-width: 250px;
-}
-.instruction{
-  top: 10px;
 }
 #instruction-icon{
   font-size: 40px;
