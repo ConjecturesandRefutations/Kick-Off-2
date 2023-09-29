@@ -6,12 +6,10 @@ let isClockPaused = false;
 const countdown = document.getElementById('countdown');
 
 function updateCountdown() {
-  countdown.innerText = ` ${startingSeconds}`;
-  if (!isClockPaused) {
-    if (startingSeconds <= 0) {
-      startingSeconds = 45; // Restart the countdown from 45
-    } else {
-      startingSeconds--;
-    }
+  if (!isClockPaused && startingSeconds > 0) {
+    startingSeconds--;
+    countdown.innerText = ` ${startingSeconds}`;
   }
 }
+
+

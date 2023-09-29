@@ -159,6 +159,23 @@ body{
         background-position: center;
       }
 
+      .audio{
+        height: 15px;
+        margin-top: 21px;
+        margin-left: 10px;
+    }
+
+    .play-music{
+      cursor: pointer;
+      position: absolute;
+      padding: none;
+      display: flex;
+      flex-direction: row;
+      color: red;
+    }
+
+    #volume-icon{margin-top: 20px;}
+
       #yourScore{
         margin-bottom: 70px;
         margin-left: 10px
@@ -213,11 +230,27 @@ body{
           transform-origin: center center;
         }
     }
+
+    @media(max-width:506px){
+      .audio  {
+        display: none;
+    }
+    #volume-icon{
+      font-size: 50px;
+      margin-left: 10px;
+    }
+    }
       
     @media(max-width:500px){
       #title{
           max-width: 350px;
       }
+  }
+
+  @media(max-width:450px){
+    #volume-icon{
+      font-size: 45px;
+    }
   }
 
   @media(max-width:400px){
@@ -227,6 +260,10 @@ body{
 }
 
 @media(max-width:330px){
+  #volume-icon{
+    font-size: 40px;
+    margin-top: 10px;
+  }
 #title{
   max-width: 250px;
 }

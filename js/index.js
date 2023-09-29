@@ -45,6 +45,7 @@ for (let i = 0 ; i < mainMenuButton.length; i++) {
 let animationID; // Store the animation ID
 window.onload = () => {
     startButton.onclick = () => {
+        opening.pause();
         openingSection.style.display = 'none';
         myCanvas.style.display = '';
         arrowControls.style.display = '';
@@ -57,7 +58,7 @@ window.onload = () => {
 };
 
 function startGame() {
-  setInterval(updateCountdown, 1000)
+  setInterval(updateCountdown, 1000);
 
   currentGame = new Game();
   ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // draw background image
@@ -91,9 +92,10 @@ function updateCanvas() {
    document.querySelector('.scoreOne').innerText = currentGame.score
   }
 
-if (startingSeconds === 0){
-  endGame()
-}
+  if (startingSeconds <= 0) {
+    endGame();
+  }
+  
 
 const leftMargin = 250; 
 
@@ -155,7 +157,7 @@ function endGame(){
   isClockPaused = true;
   arrowControls.style.display = 'none';
 }
-console.log(currentGame.obstacles.length)
+console.log(startingSeconds)
 animationID = requestAnimationFrame(updateCanvas);
 }
 
@@ -179,6 +181,7 @@ let restartButton = document.getElementsByClassName('try-again-button')
 for (let i = 0 ; i < restartButton.length; i++) {
 restartButton[i].addEventListener('click',  ()=>{
 startingSeconds = 45
+countdown.innerText = ` ${startingSeconds}`;
 isClockPaused= false;
 fullTime.style.display = 'none';
 openingSection.style.display = 'none'
