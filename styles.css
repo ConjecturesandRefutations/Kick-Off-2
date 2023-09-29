@@ -194,7 +194,7 @@ body{
   margin-top: 5px;
 }
 
-.back{
+.homepage,.back{
   position: absolute;
   right: 50px;
   cursor: pointer;
@@ -205,6 +205,11 @@ body{
   padding: none;
   font-size: large;
   margin-top: 21px;
+}
+
+#homepageImg{
+  max-width: 150px;
+  margin-top: 5px;
 }
 
 #instruction-title,#settings-title{
@@ -344,7 +349,11 @@ body{
     display: block;
 }
 
-
+      @media (max-width: 875px){
+        .utility-buttons{
+          top: 70%;
+        }
+      }
 
       @media (max-width: 610px){
         #canvas {
@@ -368,6 +377,15 @@ body{
       #volume-icon,#setting-icon,#instruction-icon{
         font-size: 50px;
       }
+      #info{
+        font-size: 20px;
+      }
+      .homepage{ max-width: 130px;
+      }
+      #homepageImg{
+        max-width: 110px;
+      }
+  
     }
       
     @media(max-width:500px){
@@ -377,6 +395,9 @@ body{
       #start-button{
         max-width: 250px;
     }
+    .homepage{
+      right: 20px;
+  }
   }
 
   @media(max-width:450px){

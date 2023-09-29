@@ -72,6 +72,13 @@ for (let i = 0 ; i < mainMenuButton.length; i++) {
   })  
 }
 
+//Homepage button
+let homeButton = document.querySelector('.homepage')
+homeButton.style.display='none';
+  homeButton.onclick = () =>{
+    location.reload() 
+  }
+
 //Start Button
 window.onload = () => {
     startButton.onclick = () => {
@@ -83,6 +90,7 @@ window.onload = () => {
         yourScore.style.display = '' 
         opponentScore.style.display = ''
         timer.style.display = '';
+        homeButton.style.display = '';
         startGame();
   };
 
