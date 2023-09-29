@@ -35,9 +35,29 @@
     <section class="settings-section">         
       <button class='back'><img src="images/back.png" alt="back" id="back"></button> 
       <img src="./images/settings.png" alt="settings-title" id="settings-title">
-      <article class="instruction-text">
+      <article class="settings-body">
         <h3>Game Length</h3>
         <h3>Opponent Type</h3>
+        <div class="opponents">
+          <div class="opponentImages">
+              <label for="opponentOne">
+                  <input type="radio" name="opponent" value="opponentOne" class="opponent-checkbox opponentOne" id="opponentOne" onclick="handleOpponentChange(event)" checked>
+                  <img src="images/opponentOne.png" alt="opponentOne" class="opponentOneImg"/>
+                  <div class="checkmark"></div>
+              </label>
+              <label for="opponentTwo">
+                  <input type="radio" name="opponent" value="opponentTwo" class="opponent-checkbox opponentTwo" id="opponentTwo" onclick="handleOpponentChange(event)">
+                  <img src="images/opponentTwo.png" alt="opponentTwo" class="opponentTwoImg"/>
+                  <div class="checkmark"></div>
+              </label>
+              <label for="opponentThree">
+                  <input type="radio" name="opponent" value="opponentThree" class="opponent-checkbox opponentThree" id="opponentThree" onclick="handleOpponentChange(event)">
+                  <img src="images/opponentThree.png" alt="opponentThree" class="opponentThreeImg"/>
+                  <div class="checkmark"></div>
+              </label>
+          </div>
+      </div>
+      
         <h3>Ball Type</h3>
         <div class="balls">
           <div class="ballImages">

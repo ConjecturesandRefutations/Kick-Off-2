@@ -4,9 +4,23 @@ class Obstacle {
         this.y = y;
         this.width = 50;
         this.height = 70;
-        this.img = './images/zidane.png';
+        this.img = this.getImagePath();
         this.direction = direction;
     }
+
+    getImagePath() {
+      // Return the appropriate image path based on the currentColor
+      switch (currentOpponent) {
+        case 'opponentOne':
+          return './images/opponentOne.png';
+        case 'opponentTwo':
+          return './images/opponentTwo.png';
+        case 'opponentThree':
+          return './images/opponentThree.png';
+        default:
+          return './images/opponentOne.png';
+      }
+    }  
 
     drawObstacle(){
         const obstacleImg = new Image();

@@ -110,16 +110,6 @@ body{
     }
 
 
-      @media (max-width: 450px) {
-        #opening-section{
-        display: flex;
-      flex-direction: column;
-           padding-bottom: 100%;
-        }
-          #start-button{
-            margin-top: 50px;
-          }
-      } 
 
         .arrow-controls {
             width: 180px;
@@ -276,20 +266,57 @@ body{
         color: purple;
       }
 
+      .settings-body{
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%);
+      }
+
+      .selections{
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%);
+        display: flex;
+        flex-direction: row;
+        gap: 200px;
+    }
+    
+    #select-opponent{
+        max-width: 500px;   
+        max-height: 50px; 
+    }
+    #select-ball{
+        max-width: 400px;
+        max-height: 50px;    
+    }
+
+      .opponentOneImg,.opponentTwoImg,.opponentThreeImg{
+        max-height: 100px !important;
+        cursor: pointer;
+      }
       .ballOneImg,.ballTwoImg,.ballThreeImg{
-        max-width: 100px !important;
+        width: 100px !important;
         height: 100px !important;
         cursor: pointer;
     }
     
-    .ballImages{
+  .ballImages,.opponentImages{
         display: flex;
         flex-direction: row;
-        gap: 10px;
         margin-bottom: 5px;
     }
+
+    .ballImages{
+      gap: 10px;
+    }
+    .opponentImages{
+      gap: 50px;
+
+    }
     
-    .location-checkbox,
+    .opponent-checkbox,
     .ball-checkbox {
         display: none;
     }
@@ -303,11 +330,20 @@ body{
       display: none;
   }
 
-  .ball-checkbox:checked + .ballOneImg + .checkmark,
-.ball-checkbox:checked + .ballTwoImg + .checkmark,
-.ball-checkbox:checked + .ballThreeImg + .checkmark {
+/* Styles for opponent selection */
+.opponents .opponent-checkbox:checked + .opponentOneImg + .checkmark,
+.opponents .opponent-checkbox:checked + .opponentTwoImg + .checkmark,
+.opponents .opponent-checkbox:checked + .opponentThreeImg + .checkmark {
     display: block;
 }
+
+/* Styles for ball selection */
+.balls .ball-checkbox:checked + .ballOneImg + .checkmark,
+.balls .ball-checkbox:checked + .ballTwoImg + .checkmark,
+.balls .ball-checkbox:checked + .ballThreeImg + .checkmark {
+    display: block;
+}
+
 
 
       @media (max-width: 610px){
@@ -347,6 +383,17 @@ body{
     #volume-icon,#setting-icon{
       font-size: 45px;
     }
+    #opening-section{
+      display: flex;
+    flex-direction: column;
+         padding-bottom: 100%;
+      }
+        #start-button{
+          margin-top: 50px;
+        }
+        .ballImages{
+          flex-wrap: wrap;
+      }
   }
 
   @media(max-width:400px){
