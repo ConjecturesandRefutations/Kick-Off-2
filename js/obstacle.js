@@ -4,7 +4,7 @@ class Obstacle {
         this.y = y;
         this.width = 50;
         this.height = 70;
-        this.img = './images/zidane (3).png'
+        this.img = './images/zidane.png'
     }
 
     drawObstacle(){

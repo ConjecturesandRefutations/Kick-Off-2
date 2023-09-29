@@ -169,7 +169,6 @@ body{
       .scoreOne, .scoreTwo {
         font-size: 40px;
         font-weight: bold;
-        color: red;
       }
       
       #score{
@@ -186,6 +185,7 @@ body{
         z-index: 999;
         font-size: 30px;
         font-weight: bolder;
+        color: white;
       }
 
       .full-time {

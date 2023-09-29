@@ -142,7 +142,6 @@
     
   
     stopMovingBall() {
-      console.log('stopMovingBall called');
       // Stop the ball's movement when all buttons are released
       if (!this.upButtonDown && !this.downButtonDown && !this.leftButtonDown && !this.rightButtonDown) {
         cancelAnimationFrame(this.requestAnimationFrame);
