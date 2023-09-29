@@ -217,7 +217,7 @@ body{
   margin-top: 21px;
 }
 
-#instruction-title{
+#instruction-title,#settings-title{
   position: absolute;
   left: 50%;
   top: 10%;
@@ -276,6 +276,40 @@ body{
         color: purple;
       }
 
+      .ballOneImg,.ballTwoImg,.ballThreeImg{
+        max-width: 100px !important;
+        height: 100px !important;
+        cursor: pointer;
+    }
+    
+    .ballImages{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .location-checkbox,
+    .ball-checkbox {
+        display: none;
+    }
+
+    .checkmark {
+      width: 20px; 
+      height: 20px; 
+      background-color: red;
+      top: 0;
+      left: 0;
+      display: none;
+  }
+
+  .ball-checkbox:checked + .ballOneImg + .checkmark,
+.ball-checkbox:checked + .ballTwoImg + .checkmark,
+.ball-checkbox:checked + .ballThreeImg + .checkmark {
+    display: block;
+}
+
+
       @media (max-width: 610px){
         #canvas {
           width: 100vh; 
@@ -301,7 +335,7 @@ body{
     }
       
     @media(max-width:500px){
-      #title,#instruction-title{
+      #title,#instruction-title,#settings-title{
           max-width: 350px;
       }
       #start-button{
@@ -316,7 +350,7 @@ body{
   }
 
   @media(max-width:400px){
-    #title,#instruction-title{
+    #title,#instruction-title,#settings-title{
         max-width: 300px;
     }
     #start-button{
@@ -332,7 +366,7 @@ body{
   #setting-icon{
     font-size: 40px;
   }
-#title,#instruction-title{
+#title,#instruction-title,#settings-title{
   max-width: 250px;
 }
 .instruction{
@@ -347,7 +381,7 @@ body{
 }
 
 @media(max-width:280px){
-  #title,#instruction-title{
+  #title,#instruction-title,#settings-title{
       max-width: 230px;
   }
   #start-button{

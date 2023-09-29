@@ -5,7 +5,7 @@
       this.width = 40;
       this.height = 40;
       this.angle = 0;
-      this.img = './images/football.jpg';
+      this.img = this.getImagePath();
       this.upButtonDown = false;
       this.downButtonDown = false;
       this.leftButtonDown = false;
@@ -30,6 +30,20 @@
       this.throttledRightStart = this.throttle(() => this.startMovingBall('right'), this.throttleDelay);
   
     }
+
+    getImagePath() {
+      // Return the appropriate image path based on the currentColor
+      switch (currentColor) {
+        case 'ballOne':
+          return './images/ballOne.png';
+        case 'ballTwo':
+          return './images/ballTwo.png';
+        case 'ballThree':
+          return './images/ballThree.png';
+        default:
+          return './images/ballOne.png';
+      }
+    }  
 
     drawBall() {
       const ballImg = new Image();

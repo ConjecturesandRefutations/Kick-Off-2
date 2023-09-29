@@ -28,12 +28,27 @@ const instructionButton = document.querySelector('.instruction');
     instructionSection.style.display = '';
 }
 
-// Back Button
-const backButton = document.querySelector('.back');
-  backButton.onclick = () => {
-  openingSection.style.display = '';
-  instructionSection.style.display = 'none';
+//Instructions Section
+const settingsSection = document.querySelector('.settings-section');
+settingsSection.style.display = 'none';
+//settings Button
+const settingsButton = document.querySelector('.settings');
+  settingsButton.onclick = () => {
+    openingSection.style.display = 'none';
+    settingsSection.style.display = '';
 }
+
+// Back Button
+const backButton = document.querySelectorAll('.back'); 
+
+for (let i = 0; i < backButton.length; i++) {
+  backButton[i].addEventListener('click', () => {
+    instructionSection.style.display = 'none';
+    settingsSection.style.display = 'none';
+    openingSection.style.display = '';
+  });
+}
+
 
 //Arrow Controls
 const arrowControls = document.querySelector('.arrow-controls');
@@ -173,7 +188,6 @@ function endGame(){
   isClockPaused = true;
   arrowControls.style.display = 'none';
 }
-console.log(startingSeconds)
 animationID = requestAnimationFrame(updateCanvas);
 }
 

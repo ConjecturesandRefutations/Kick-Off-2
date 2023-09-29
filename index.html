@@ -21,7 +21,7 @@
     </article>
 
     <article class="settings">
-    <img src="./images/settings.png" alt="settings" id="settings"><i class="fa fa-cog" aria-hidden="true" id="setting-icon"></i>
+    <img src="./images/settings.png" alt="settings" id="settings">&ensp;<i class="fa fa-cog" aria-hidden="true" id="setting-icon"></i>
     </article>
 
       <img src="./images/kickoff.png" alt="kickoff" id="title">
@@ -30,6 +30,35 @@
     
 
     </div>
+    </section>
+
+    <section class="settings-section">         
+      <button class='back'><img src="images/back.png" alt="back" id="back"></button> 
+      <img src="./images/settings.png" alt="settings-title" id="settings-title">
+      <article class="instruction-text">
+        <h3>Game Length</h3>
+        <h3>Opponent Type</h3>
+        <h3>Ball Type</h3>
+        <div class="balls">
+          <div class="ballImages">
+              <label for="ballOne">
+                  <input type="radio" name="ball" value="ballOne" class="ball-checkbox ballOne" id="ballOne" onclick="handleBallChange(event)" checked>
+                  <img src="images/ballOne.png" alt="ballOne" class="ballOneImg"/>
+                  <div class="checkmark"></div>
+              </label>
+              <label for="ballTwo">
+                  <input type="radio" name="ball" value="ballTwo" class="ball-checkbox ballTwo" id="ballTwo" onclick="handleBallChange(event)">
+                  <img src="images/ballTwo.png" alt="ballTwo" class="ballTwoImg"/>
+                  <div class="checkmark"></div>
+              </label>
+              <label for="ballThree">
+                  <input type="radio" name="ball" value="ballThree" class="ball-checkbox ballThree" id="ballThree" onclick="handleBallChange(event)">
+                  <img src="images/ballThree.png" alt="ballThree" class="ballThreeImg"/>
+                  <div class="checkmark"></div>
+              </label>
+          </div>
+      </div>
+    </article>
     </section>
 
     <canvas id="canvas" width="1400" height="700"></canvas> 
@@ -71,6 +100,7 @@
 </section>
 
   <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/selection.js"></script>
   <script type="text/javascript" src="./js/ball.js"></script>
   <script type="text/javascript" src="./js/game.js"></script>
   <script type="text/javascript" src="./js/obstacle.js"></script>
