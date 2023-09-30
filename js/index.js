@@ -3,6 +3,7 @@ let currentGame;
 let currentBall;
 let animationID; // Store the animation ID
 let obstaclesFrequency = 0; //Logic for supporting the generation of obstacles
+let whistlePlayed = false;
 
 let background = new Image();
 background.src = "./images/pitch.jpg";
@@ -131,8 +132,11 @@ function updateCanvas() {
    document.querySelector('.scoreOne').innerText = currentGame.score
   }
 
-  if (startingSeconds <= 0) {
-    whistle.play();
+  if (startingSeconds <=0 ) {
+    if (!whistlePlayed) {
+      whistle.play();
+      whistlePlayed = true;
+    }
     endGame();
   }
   
@@ -221,6 +225,7 @@ for (let i = 0 ; i < restartButton.length; i++) {
 restartButton[i].addEventListener('click',  ()=>{
 startingSeconds = 45
 countdown.innerText = ` ${startingSeconds}`;
+whistlePlayed = false;
 isClockPaused= false;
 fullTime.style.display = 'none';
 openingSection.style.display = 'none'
