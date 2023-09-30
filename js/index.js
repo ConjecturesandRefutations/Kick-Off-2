@@ -132,6 +132,7 @@ function updateCanvas() {
   }
 
   if (startingSeconds <= 0) {
+    whistle.play();
     endGame();
   }
   
