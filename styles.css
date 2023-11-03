@@ -431,11 +431,14 @@ body{
   }
 
   @media(max-width:400px){
-    #title,#instruction-title,#settings-title{
+    #title,#instruction-title,#settings-title,#full-time{
         max-width: 300px;
     }
     #start-button{
       max-width: 250px;
+  }
+  #restart{
+    max-width: 200px;
   }
 }
 
@@ -446,8 +449,11 @@ body{
   #setting-icon{
     font-size: 40px;
   }
-#title,#instruction-title,#settings-title{
+#title,#instruction-title,#settings-title,#full-time{
   max-width: 250px;
+}
+#restart{
+  max-width: 150px;
 }
 #instruction-icon{
   font-size: 40px;
