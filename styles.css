@@ -354,6 +354,15 @@ body{
     display: block;
 }
 
+#full-time{
+  position: absolute;
+  max-width: 400px;
+  max-height: 150px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 @media(max-width: 912px){
   #canvas {
     width: 100vh; 
