@@ -9,7 +9,15 @@ function updateCountdown() {
   if (!isClockPaused && startingSeconds > 0) {
     startingSeconds--;
     countdown.innerText = ` ${startingSeconds}`;
+  } else if (startingSeconds <= 0) {
+    clearInterval(countdownInterval); // Stop the timer when it hits zero
+    if (!whistlePlayed) {
+      whistle.play();
+      whistlePlayed = true;
+    }
+    endGame();
   }
 }
+
 
 

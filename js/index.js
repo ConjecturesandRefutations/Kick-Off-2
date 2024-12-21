@@ -4,6 +4,7 @@ let currentBall;
 let animationID; // Store the animation ID
 let obstaclesFrequency = 0; //Logic for supporting the generation of obstacles
 let whistlePlayed = false;
+let countdownInterval; // Global variable for managing the countdown timer
 
 let background = new Image();
 background.src = "./images/pitch.jpg";
@@ -77,7 +78,21 @@ for (let i = 0 ; i < mainMenuButton.length; i++) {
 let homeButton = document.querySelector('.homepage')
 homeButton.style.display='none';
   homeButton.onclick = () =>{
-    location.reload() 
+    startingSeconds = 45
+    countdown.innerText = ` ${startingSeconds}`;
+    whistlePlayed = false;
+    isClockPaused= true;
+    openingSection.style.display = '';
+    myCanvas.style.display = 'none';
+    yourScore.style.display = 'none';
+    opponentScore.style.display = 'none';
+    timer.style.display = 'none';
+    homeButton.style.display = 'none';
+    clearInterval(countdownInterval);
+    cancelAnimationFrame(animationID);
+    arrowControls.style.display = 'none';
+    fullTime.style.display = 'none';
+    resetScore();
   }
 
 //Start Button
@@ -90,6 +105,7 @@ window.onload = () => {
         arrowControls.style.display = '';
         yourScore.style.display = '' 
         opponentScore.style.display = ''
+        isClockPaused= false;
         timer.style.display = '';
         homeButton.style.display = '';
         startGame();
@@ -98,12 +114,13 @@ window.onload = () => {
 };
 
 function startGame() {
-  setInterval(updateCountdown, 1000);
+  clearInterval(countdownInterval); // Clear any existing interval to prevent duplicates
+  countdownInterval = setInterval(updateCountdown, 1000); // Assign the interval to countdownInterval
 
   currentGame = new Game();
-  ctx.drawImage(background, 0, 0,myCanvas.width,myCanvas.height); // draw background image
+  ctx.drawImage(background, 0, 0, myCanvas.width, myCanvas.height); // Draw background image
 
-  //Instantiate a new ball
+  // Instantiate a new ball
   currentBall = new Ball();
   currentBall.drawBall();
 
@@ -114,7 +131,6 @@ function startGame() {
 
   // Start the animation loop
   animationID = requestAnimationFrame(updateCanvas);
-
 }
 
 function updateCanvas() {
@@ -219,21 +235,22 @@ function detectCollision(obstacle) {
       currentGame.opponentsScore = 0
     }
 
-//Restart Button
-let restartButton = document.getElementsByClassName('try-again-button')
-for (let i = 0 ; i < restartButton.length; i++) {
-restartButton[i].addEventListener('click',  ()=>{
-startingSeconds = 45
-countdown.innerText = ` ${startingSeconds}`;
-whistlePlayed = false;
-isClockPaused= false;
-fullTime.style.display = 'none';
-openingSection.style.display = 'none'
-myCanvas.style.display = ''
-yourScore.style.display = '' 
-opponentScore.style.display = ''
-timer.style.display = ''
-arrowControls.style.display = '';
-resetScore()
-}) 
-} 
+// Restart Button
+let restartButton = document.getElementsByClassName('try-again-button');
+for (let i = 0; i < restartButton.length; i++) {
+  restartButton[i].addEventListener('click', () => {
+    startingSeconds = 45; // Reset the countdown timer
+    countdown.innerText = ` ${startingSeconds}`;
+    whistlePlayed = false; // Reset whistle flag
+    isClockPaused = false; // Unpause the clock
+    fullTime.style.display = 'none'; // Hide full-time message
+    openingSection.style.display = 'none';
+    myCanvas.style.display = ''; // Show the canvas
+    yourScore.style.display = ''; 
+    opponentScore.style.display = '';
+    timer.style.display = '';
+    arrowControls.style.display = '';
+    resetScore(); // Reset scores
+    startGame(); // Start the game logic again
+  });
+}
